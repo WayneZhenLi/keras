@@ -49,6 +49,7 @@ class TensorFlowTrainer(base_trainer.Trainer):
         self._distribute_reduction_method = value
 
     def train_step(self, data):
+        #Wayne: have a input for dataset of eyeballed error.  Then calculate data set of y based on that by simply doing y_pred + est_error
         x, y, sample_weight = data_adapter_utils.unpack_x_y_sample_weight(data)
 
         # Forward pass
